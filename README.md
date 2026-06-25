@@ -4,26 +4,26 @@ A Dockerized Django Local Library application deployed on an AWS EC2 Ubuntu inst
 
 ---
 
-## Project Overview
+# Project Overview
 
 This project demonstrates how to containerize a Django web application using Docker and deploy it on an AWS EC2 Ubuntu instance.
 
-The application used in this project is based on the **MDN Django Local Library** tutorial. A custom Dockerfile was created to build a Docker image, run the application inside a container, expose it through a custom port, and access it from a web browser.
+The application used in this project is based on the **MDN Django Local Library** tutorial. A custom Dockerfile was created to build a Docker image, run the application inside a Docker container, expose it through a custom port, and access it from a web browser.
 
 ---
 
-## Features
+# Features
 
 * Containerized an existing Django application using Docker
 * Built a custom Docker image
 * Deployed the application inside a Docker container
 * Configured Docker port mapping
-* Ran Django database migrations inside the container
+* Executed Django database migrations inside the running container
 * Accessed the application using an AWS EC2 public IP
 
 ---
 
-## Technologies Used
+# Technologies Used
 
 * Python
 * Django
@@ -35,7 +35,7 @@ The application used in this project is based on the **MDN Django Local Library*
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
 dockerized-django-locallibrary/
@@ -60,7 +60,7 @@ dockerized-django-locallibrary/
 
 ---
 
-## Dockerfile
+# Dockerfile
 
 ```dockerfile
 FROM python:3.11-slim
@@ -80,17 +80,17 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 ---
 
-## Prerequisites
+# Prerequisites
 
-Before running the project, ensure you have:
+Before running this project, ensure you have:
 
 * Docker installed
 * Git installed
-* AWS EC2 Ubuntu instance (or any Linux machine)
+* An AWS EC2 Ubuntu instance (or any Linux machine)
 
 ---
 
-## Clone the Repository
+# Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/dockerized-django-locallibrary.git
@@ -100,7 +100,7 @@ cd dockerized-django-locallibrary
 
 ---
 
-## Build Docker Image
+# Build Docker Image
 
 ```bash
 docker build -t locallibrary-django .
@@ -108,7 +108,7 @@ docker build -t locallibrary-django .
 
 ---
 
-## Verify Docker Image
+# Verify Docker Image
 
 ```bash
 docker images
@@ -116,7 +116,7 @@ docker images
 
 ---
 
-## Run Docker Container
+# Run Docker Container
 
 ```bash
 docker run -d -p 8002:8000 --name locallibrary-container locallibrary-django
@@ -124,7 +124,7 @@ docker run -d -p 8002:8000 --name locallibrary-container locallibrary-django
 
 ---
 
-## Verify Running Container
+# Verify Running Container
 
 ```bash
 docker ps
@@ -132,7 +132,7 @@ docker ps
 
 ---
 
-## Apply Database Migrations
+# Apply Database Migrations
 
 ```bash
 docker exec -it locallibrary-container python manage.py migrate
@@ -140,7 +140,7 @@ docker exec -it locallibrary-container python manage.py migrate
 
 ---
 
-## View Container Logs
+# View Container Logs
 
 ```bash
 docker logs locallibrary-container
@@ -148,7 +148,7 @@ docker logs locallibrary-container
 
 ---
 
-## Access the Application
+# Access the Application
 
 Open your browser and visit:
 
@@ -173,10 +173,10 @@ Build Docker Image
 Run Docker Container
         │
         ▼
-Run Django Migrations
+Run Database Migrations
         │
         ▼
-Access Application from Browser
+Access Application in Browser
 ```
 
 ---
@@ -201,13 +201,13 @@ Access Application from Browser
 
 ---
 
-## Running Docker Container
+## Running Container
 
 ![](screenshots/04-container-running.png)
 
 ---
 
-## Django Application Running
+## Django Application
 
 ![](screenshots/05-browser-output.png)
 
@@ -227,12 +227,12 @@ Access Application from Browser
 
 # Key Learnings
 
-* Understood the purpose of Docker images and containers.
-* Created a Dockerfile to package a Django application.
+* Learned how Docker packages applications into portable containers.
+* Wrote a custom Dockerfile for a Django application.
 * Built Docker images from application source code.
-* Ran a Django application inside a Docker container.
-* Configured Docker port mapping to expose the application.
-* Executed Django database migrations within a running container.
+* Deployed a Django application inside a Docker container.
+* Configured Docker port mapping for external access.
+* Executed Django database migrations inside a running container.
 * Deployed and tested the application on an AWS EC2 Ubuntu instance.
 
 ---
@@ -267,26 +267,23 @@ docker rm locallibrary-container
 
 ---
 
-# Future Improvements
+# Project Summary
 
-* Deploy the application using Docker Compose.
-* Replace SQLite with PostgreSQL.
-* Configure Nginx as a reverse proxy.
-* Automate deployment using GitHub Actions.
-* Deploy to a cloud container platform.
+Successfully containerized a Django web application using Docker, deployed it on an AWS EC2 Ubuntu instance, executed database migrations inside the container, and accessed the application through a web browser using Docker port mapping.
 
 ---
 
 # Acknowledgement
 
-This project uses the Django Local Library application from the MDN Web Docs tutorial for educational purposes.
+This project uses the **Django Local Library** application from the MDN Web Docs tutorial for educational purposes.
 
-Original project:
+Original Repository:
 
 https://github.com/mdn/django-locallibrary-tutorial
 
 ---
 
-## Author
+# Author
 
 **Swen Lemos**
+
