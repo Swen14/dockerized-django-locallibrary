@@ -277,10 +277,6 @@ Successfully containerized a Django web application using Docker, deployed it on
 
 This project uses the **Django Local Library** application from the MDN Web Docs tutorial for educational purposes.
 
-Original Repository:
-
-https://github.com/mdn/django-locallibrary-tutorial
-
 ---
 
 # Author
